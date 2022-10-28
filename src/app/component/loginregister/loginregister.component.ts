@@ -2,6 +2,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, NonNullableFormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HotToastService } from '@ngneat/hot-toast';
+import { switchMap } from 'rxjs';
 import { Mregister } from 'src/app/model/mregister';
 import { AuthService } from 'src/app/shared/auth.service';
 import { SregisterService } from 'src/app/shared/sregister.service';
@@ -60,6 +61,7 @@ export class LoginregisterComponent implements OnInit {
     })
 
   }
+  
   submit(){
     const { name, phnm,email, password,cpassword } = this.form.value;
     if (!this.form.valid || !name || !phnm || !email || !password || !cpassword) {

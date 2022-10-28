@@ -23,14 +23,23 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { MatCardModule } from '@angular/material/card';
 import { LoginregisterComponent } from './component/loginregister/loginregister.component';
-
-
+import { HomepagedesignComponent } from './component/homepagedesign/homepagedesign.component';
+import{NavbarComponent} from './component/homepagedesign/navbar/navbar.component';
+import{CarouselComponent} from './component/homepagedesign/carousel/carousel.component';
+import{DetailsComponent} from './component/homepagedesign/details/details.component';
+import{FooterComponent} from './component/homepagedesign/footer/footer.component';
+//import{NavbarComponent} from './component/homepagedesign/navbar/navbar.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    LoginregisterComponent
+    LoginregisterComponent,
+    HomepagedesignComponent,
+    NavbarComponent,
+    CarouselComponent,
+    DetailsComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

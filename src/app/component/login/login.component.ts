@@ -4,6 +4,9 @@ import { HotToastService } from '@ngneat/hot-toast';
 //import { AuthService } from 'src/app/shared/auth.service';
 import { AuthService } from 'src/app/shared/auth.service';
 import { Mregister } from 'src/app/model/mregister';
+import { doc } from "firebase/firestore";
+
+
 // try
 import {
   AbstractControl,
@@ -14,6 +17,9 @@ import {
   ValidatorFn,
   Validators,
 } from '@angular/forms';
+import { AngularFireStorage } from '@angular/fire/compat/storage';
+import { map, Observable, switchMap } from 'rxjs';
+import { getDoc } from '@angular/fire/firestore';
 //import { AuthService } from 'src/app/shared/auth.service';
 
 export function passwordsMatchValidator(): ValidatorFn {
@@ -57,16 +63,20 @@ export class LoginComponent implements OnInit {
   email:string='';
   password:string='';
   data: any;
+  firestore: any;
   constructor(
     private auth : AuthService,
     private authService: AuthService,
     private router: Router,
     private toast: HotToastService,
+    private db:AngularFireStorage,
   //  private usersService: UsersService,
     private fb: NonNullableFormBuilder,
-  ) { }
+  ) {}
+
 
   ngOnInit(): void {
+  
   }
   loginForm = this.fb.group(
     {
@@ -77,8 +87,7 @@ export class LoginComponent implements OnInit {
   
   getAllStudents() {
 
-    this.data.getAllStudents().subscribe((res: any[]) => {
-
+   this.data.getAllStudents().subscribe((res: any[]) => {
       this.registerdata = res.map((e: any) => {
         const data = e.payload.doc.data();
         data.id = e.payload.doc.id;
@@ -89,4 +98,21 @@ export class LoginComponent implements OnInit {
     Error,(err: any)=>`${err?.message}`)
 
   }
+  getAllStudents1() {
+
+    this.data.getAllStudents().subscribe((res: any[]) => {
+       this.registerdata = res.map((e: any) => {
+         const data = e.payload.doc.data();
+         data.id = e.payload.doc.id;
+         return data;
+       })
+ 
+     }, 
+     Error,(err: any)=>`${err?.message}`)
+ 
+   }
+   onSubmit() {  
+    this.router.navigateByUrl('/loginregister');
+} 
+   
 }

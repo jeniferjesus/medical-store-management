@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from '@angular/fire/auth';
+import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, UserCredential } from '@angular/fire/auth';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 //import {AngularFirestore} from '@angular/fire/compat/firebase.app';
@@ -34,5 +34,12 @@ export class AuthService {
   // login(email: string, password: string): Observable<any> {
   //   return from(signInWithEmailAndPassword(this.auth, email, password));
   // }
+  signUp(email: string, password: string): Observable<UserCredential> {
+    return from(createUserWithEmailAndPassword(this.auth, email, password));
+  }
+
+  login(email: string, password: string): Observable<any> {
+    return from(signInWithEmailAndPassword(this.auth, email, password));
+  }
   
 }
