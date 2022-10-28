@@ -27,12 +27,12 @@ export class AuthService {
   // }
 
 
-  signUp(email: string, password: string): Observable<any>{
-    return from(createUserWithEmailAndPassword(this.auth, email, password));
-  }
+  // signUp(email: string, password: string): Observable<any>{
+  //   return from(createUserWithEmailAndPassword(this.auth, email, password));
+  // }
 
-  login(email: string, password: string): Observable<any> {
-    return from(signInWithEmailAndPassword(this.auth, email, password));
-  }
+  // login(email: string, password: string): Observable<any> {
+  //   return from(signInWithEmailAndPassword(this.auth, email, password));
+  // }
   
 }
