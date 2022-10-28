@@ -1,0 +1,21 @@
+{
+  "targets": {
+    "dreams-events-nafproject": {
+      "hosting": {
+        "medical-store-management": [
+          "dreams-events-nafproject"
+        ]
+      }
+    },
+    "medical-store-management-7852b": {
+      "hosting": {
+        "medical-store-management": [
+          "medical-store-management-7852b"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "medical-store-management-7852b"
+  }
+}
