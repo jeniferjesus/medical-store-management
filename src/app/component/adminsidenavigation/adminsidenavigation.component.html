@@ -1,308 +1,39 @@
-<!-- <h1>hi</h1>
-
-  <div class="main_box">
-    <input type="checkbox" id="check">
-    <div class="btn_one">
-      <label for="check">
-        <i class="fas fa-bars"></i>
-        <h1>hi</h1>
-      </label>
-    </div>
-    <div class="sidebar_menu">
-      <div class="logo">
-        <a href="#">CodingLab</a>
-          </div>
-        <div class="btn_two">
-          <label for="check">
-            <i class="fas fa-times"></i>
-          </label>
-        </div>
-      <div class="menu">
-        <ul>
-          <li><i class="fas fa-qrcode"></i>
-            <a href="#">Dashboard</a>
-          </li>
-          <li>
-            <i class="fas fa-link"></i>
-            <a href="#">Shortcuts</a>
-          </li>
-          <li>
-            <i class="fas fa-stream"></i>
-            <a href="#">Overview</a>
-          </li>
-          <li>
-            <i class="fas fa-calendar-week"></i>
-            <a href="#">Events</a>
-          </li>
-          <li>
-            <i class="fas fa-question-circle"></i>
-            <a href="#">About</a>
-          </li>
-          <li>
-            <i class="fas fa-sliders-h"></i>
-            <a href="#">Services</a>
-          </li>
-          <li>
-            <i class="fas fa-phone-volume"></i>
-            <a href="#">Contact</a>
-          </li>
-          <li>
-          <i class="far fa-comments"></i>
-            <a href="#">Feedback</a>
-          </li>
-        </ul>
-      </div>
-      <div class="social_media">
-        <ul>
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-youtube"></i></a>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-
-   -->
 
    <body>
-    <div class="container">
-        <div class="sidebar">
-            <ul>
-                <li>
-                    <a href="#">
-                        <i class="fas fa-clinic-medical"></i>
-                        <div class="title">Brand Name</div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fas fa-th-large"></i>
-                        <div class="title">Dashboard</div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fas fa-stethoscope"></i>
-                        <div class="title">Appointments</div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fas fa-user-md"></i>
-                        <div class="title">Doctors</div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fas fa-puzzle-piece"></i>
-                        <div class="title">Departments</div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fas fa-hand-holding-usd"></i>
-                        <div class="title">Payments</div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fas fa-cog"></i>
-                        <div class="title">Settings</div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fas fa-question"></i>
-                        <div class="title">Help</div>
-                    </a>
-                </li>
+      <div class="wrapper">
+         <input type="checkbox" id="btn" hidden>
+         <label for="btn" class="menu-btn">
+         <i class="fas fa-bars"></i>
+         <i class="fas fa-times"></i>
+         </label>
+         <nav id="sidebar">
+            <div class="title">
+               Side Menu
+            </div>
+            <ul class="list-items">
+               <li><a href="#"><i class="fas fa-home"></i>Home</a></li>
+               <li><a href="#"><i class="fas fa-sliders-h"></i>Clients</a></li>
+               <li><a href="#"><i class="fas fa-address-book"></i>Services</a></li>
+               <li><a href="#"><i class="fas fa-cog"></i>Settings</a></li>
+               <li><a href="#"><i class="fas fa-stream"></i>Features</a></li>
+               <li><a href="#"><i class="fas fa-user"></i>About us</a></li>
+               <li><a href="#"><i class="fas fa-globe-asia"></i>Languages</a></li>
+               <li><a href="#"><i class="fas fa-envelope"></i>Contact us</a></li>
+               <div class="icons">
+                  <a href="#"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+                  <a href="#"><i class="fab fa-github"></i></a>
+                  <a href="#"><i class="fab fa-youtube"></i></a>
+               </div>
             </ul>
-        </div>
-        <div class="main">
-            <div class="top-bar">
-                <div class="search">
-                    <input type="text" name="search" placeholder="search here">
-                    <label for="search"><i class="fas fa-search"></i></label>
-                </div>
-                <i class="fas fa-bell"></i>
-                <div class="user">
-                    <img src="doctor1.png" alt="">
-                </div>
-            </div>
-            <div class="cards">
-                <div class="card">
-                    <div class="card-content">
-                        <div class="number">67</div>
-                        <div class="card-name">Appointments</div>
-                    </div>
-                    <div class="icon-box">
-                        <i class="fas fa-briefcase-medical"></i>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-content">
-                        <div class="number">105</div>
-                        <div class="card-name">New Patients</div>
-                    </div>
-                    <div class="icon-box">
-                        <i class="fas fa-wheelchair"></i>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-content">
-                        <div class="number">8</div>
-                        <div class="card-name">Operations</div>
-                    </div>
-                    <div class="icon-box">
-                        <i class="fas fa-bed"></i>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-content">
-                        <div class="number">$4500</div>
-                        <div class="card-name">Earnings</div>
-                    </div>
-                    <div class="icon-box">
-                        <i class="fas fa-dollar-sign"></i>
-                    </div>
-                </div>
-            </div>
-            <div class="tables">
-                <div class="last-appointments">
-                    <div class="heading">
-                        <h2>Last Appointments</h2>
-                        <a href="#" class="btn">View All</a>
-                    </div>
-                    <table class="appointments">
-                        <thead>
-                            <td>Name</td>
-                            <td>Doctor</td>
-                            <td>Condition</td>
-                            <td>Actions</td>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Liam Smith Doe</td>
-                                <td>Dr. Benjamin</td>
-                                <td>fracture</td>
-                                <td>
-                                    <i class="far fa-eye"></i>
-                                    <i class="far fa-edit"></i>
-                                    <i class="far fa-trash-alt"></i>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Emma</td>
-                                <td>Dr. Noah</td>
-                                <td>depression</td>
-                                <td>
-                                    <i class="far fa-eye"></i>
-                                    <i class="far fa-edit"></i>
-                                    <i class="far fa-trash-alt"></i>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Olivia Smith </td>
-                                <td>Dr. Liam</td>
-                                <td>arthritis</td>
-                                <td>
-                                    <i class="far fa-eye"></i>
-                                    <i class="far fa-edit"></i>
-                                    <i class="far fa-trash-alt"></i>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Isabella Doe</td>
-                                <td>Dr. Noah</td>
-                                <td>flu</td>
-                                <td>
-                                    <i class="far fa-eye"></i>
-                                    <i class="far fa-edit"></i>
-                                    <i class="far fa-trash-alt"></i>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Sophia Smith </td>
-                                <td>Dr. Olivia</td>
-                                <td>fracture</td>
-                                <td>
-                                    <i class="far fa-eye"></i>
-                                    <i class="far fa-edit"></i>
-                                    <i class="far fa-trash-alt"></i>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Liam Smith Doe</td>
-                                <td>Dr. Benjamin</td>
-                                <td>fracture</td>
-                                <td>
-                                    <i class="far fa-eye"></i>
-                                    <i class="far fa-edit"></i>
-                                    <i class="far fa-trash-alt"></i>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="doctor-visiting">
-                    <div class="heading">
-                        <h2>Doctor Visiting</h2>
-                        <a href="#" class="btn">View All</a>
-                    </div>
-                    <table class="visiting">
-                        <thead>
-                            <td>Photo</td>
-                            <td>Name</td>
-                            <td>Visit time</td>
-                            <td>Detail</td>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <div class="img-box-small">
-                                        <img src="doctor1.png" alt="">
-                                    </div>
-                                </td>
-                                <td>Benjamin</td>
-                                <td>14:00</td>
-                                <td><i class="far fa-eye"></i></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="img-box-small">
-                                        <img src="doctor3.jpg" alt="">
-                                    </div>
-                                </td>
-                                <td>Liam</td>
-                                <td>15:00</td>
-                                <td><i class="far fa-eye"></i></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="img-box-small">
-                                        <img src="doctor2.png" alt="">
-                                    </div>
-                                </td>
-                                <td>Noah</td>
-                                <td>16:00</td>
-                                <td><i class="far fa-eye"></i></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="img-box-small">
-                                        <img src="doctor4.png" alt="">
-                                    </div>
-                                </td>
-                                <td>Sophia</td>
-                                <td>17:00</td>
-                                <td><i class="far fa-eye"></i></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-</body>
+         </nav>
+      </div>
+      <div class="content">
+         <div class="header">
+            Animated Side Navigation Menu
+         </div>
+         <p>
+            using only HTML and CSS
+         </p>
+      </div>
+   </body>

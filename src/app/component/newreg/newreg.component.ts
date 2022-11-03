@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '@angular/fire/auth';
-import { FormGroup, FormControl, Validators, NonNullableFormBuilder } from '@angular/forms';
+import { user } from '@angular/fire/auth';
+import { FormGroup, FormControl, Validators, NonNullableFormBuilder, NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HotToastService } from '@ngneat/hot-toast';
 import { Userapplymedicine } from 'src/app/model/userapplymedicine';
@@ -15,7 +15,7 @@ import { AuthService } from 'src/app/shared/auth.service';
 export class NewregComponent implements OnInit {
   
   patternname="^[a-zA-Z]+$";
-   
+  numpattern="/^[0-9]+$/";
   
   form = new FormGroup({
      name: new FormControl('', [Validators.required, Validators.minLength(3),Validators.pattern(this.patternname),Validators.maxLength(15)]),
@@ -26,22 +26,22 @@ export class NewregComponent implements OnInit {
     m2: new FormControl('', [Validators.required,Validators.pattern(this.patternname)]),
     m3: new FormControl('', [Validators.required,Validators.pattern(this.patternname),Validators.maxLength(2),Validators.minLength(2)]),
     m4:new FormControl('', [Validators.required,Validators.pattern(this.patternname)]),
-    m5:new FormControl('', [Validators.required,Validators.pattern('[0-9]*'),Validators.maxLength(3),Validators.minLength(3)]),
-    m6:new FormControl('', [Validators.required,Validators.pattern(this.patternname)]),
+    m5:new FormControl('', [Validators.required,Validators.maxLength(3),Validators.minLength(3)]),
+    m6:new FormControl('', [Validators.required,Validators.pattern(this.patternname),Validators.pattern('[0-9]*')]),
   })
   // create local data
 
 quan: number =0;
 second:number = 0;
 sum:string='';
-prize:number=10;
+prize:number=10.6;
 f:number=20;
 s:number=10;
   constructor(private auth: AuthService, 
     private data: ApplymedicineserviceService, 
      private fb: NonNullableFormBuilder,
      private router: Router,
-     private toast: HotToastService,) { }
+     private toast: HotToastService) { }
 
   ngOnInit(): void {
   }
@@ -99,12 +99,12 @@ s:number=10;
     this.cvv='';
   }
   addusermedicinedetail() {
-    // if (this.username == '' || this.email == '' || this.availablemedicine == '' || this.phonenumber == '' || this.expdate == ''
-    // || this.quantity == '' || this.amount == '' || this.cardholdername == '' || this.deborcrednumber == '' || this.cvv == '') {
-    // //  alert('Fill all input fields');
-    //   return;
-    // }
-
+    
+    const { name, phnm,email, n1,m4,m1,m6,m3,m5 } = this.form.value;
+    if (this.form.valid || !name || !phnm || !email || !n1 || !m4|| !m1 || !m6 || !m3 || !m5) {
+      alert("fill all details");
+      return;
+    }
     this.usermedicineObj.id = '';
     this.usermedicineObj.email = this.email;
     this.usermedicineObj.username = this.username;
@@ -122,7 +122,7 @@ s:number=10;
     .pipe(
       this.toast.observe({      
         success: 'Congrats!'+this.usermedicineObj.username+' You are successfully applied',
-        loading: 'loding ...',
+        loading: 'loading ...',
         // error:  'wrong'    
        error:(err: any)=>`${err?.message}`,
       })  
@@ -131,39 +131,25 @@ s:number=10;
        this.router.navigate(['/navbar']);
       });
   }
-//   submit(){
-//     const { name, phnm,email, password,cpassword } = this.form.value;
-//     if (!this.form.valid || !name || !phnm || !email || !password || !cpassword) {
-//       return;
-//     }
-//     this.registerObj.id = '';
-//     this.registerObj.username = this.username;
-//     this.registerObj.phonenumber = this.phonenumber;
-//     this.registerObj.email = this.email;
-//     this.registerObj.password = this.password;
-//     this.registerObj.confirmpassword = this.confirmpassword;
-
-//     console.log(this.form.value);
-   
-//     this.data
-//     .addregisterdata(this.registerObj)
-//     .pipe(
-//     this.toast.observe({      
-//       success: 'Congrats! You are all signed up',
-//       loading: 'Signing up...',
-//      // error:  'wrong'    
-//      error:(err: any)=>`${err?.message}`,
-//     })  
-//     )
-//     // this.auth
-//     // .signUp(email, password)
-//     .subscribe(() => {
-//       //this.router.navigateByUrl('/login');
-//      this.router.navigate(['/login']);
-//     });
-   
-
-// }
+  onregister(employeeForm: NgForm) {
+    if (employeeForm.value.id == null)
+      this.data.addusermedicinedata(employeeForm.value);
+      // this.router.navigate(['/navbar']);
+    else
+      this.data.updateusermedicine(employeeForm.value);
+    // this.resetForm(employeeForm);
+    this.toast.success('Submitted Succcessfully');
+  }
+  // let transporter = nodemailer.createTransport({
+  //   host: 'smtp.gmail.com',
+  //   port: 465,
+  //   secure: true,
+  //   service: 'gmail',
+  //   auth: {
+  //     user: '*******@gmail.com',
+  //     pass: '******'
+  //   }
+  // });
   
 
 }

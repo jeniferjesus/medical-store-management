@@ -5,11 +5,15 @@ import { AdminhomecontentComponent } from './component/adminhomecontent/adminhom
 import { AdminsidenavigationComponent } from './component/adminsidenavigation/adminsidenavigation.component';
 import { AnalysisComponent } from './component/analysis/analysis.component';
 import { BpComponent } from './component/bp/bp.component';
+import { CardsComponent } from './component/cards/cards.component';
 import { CarouselComponent } from './component/carousel/carousel.component';
 import { CategoryComponent } from './component/category/category.component';
 import { CommonmedComponent } from './component/commonmed/commonmed.component';
 import { DetailsComponent } from './component/details/details.component';
 import { DiabetespageComponent } from './component/diabetespage/diabetespage.component';
+import { DisplayResigerdetailComponent } from './component/display-resigerdetail/display-resigerdetail.component';
+import { DisplaystockdetailComponent } from './component/displaystockdetail/displaystockdetail.component';
+import { DisplayusermedicineComponent } from './component/displayusermedicine/displayusermedicine.component';
 import { FeverComponent } from './component/fever/fever.component';
 import { FooterComponent } from './component/footer/footer.component';
 
@@ -31,27 +35,30 @@ const routes: Routes = [
   {path: 'carousel',component:CarouselComponent},
   {path: 'detail',component:DetailsComponent},
   {path: 'footer',component:FooterComponent},
- {path: 'login',component:LoginComponent},
+  {path: 'login',component:LoginComponent},
   {path: 'loginregister',component:LoginregisterComponent},
 
   {path: 'acidpage',component:AcidpageComponent},
   {path: 'bp',component:BpComponent},
   {path: 'category',component:CommonmedComponent},
   {path: 'commonmed',component:CategoryComponent},
- {path: 'diabetespage',component:DiabetespageComponent},
+  {path: 'diabetespage',component:DiabetespageComponent},
   {path: 'fever',component:FeverComponent},
 
   {path: 'navcategory',component:NavcategoryComponent},
   {path: 'stock',component:StockComponent},
   {path: 'throat',component:ThroatComponent},
- {path: 'vitamin',component:VitaminComponent},
+  {path: 'vitamin',component:VitaminComponent},
   {path: 'navbarmed',component:NavbarmedComponent},
   {path: 'sidenav',component:SidenavComponent},
   {path: 'newreg',component:NewregComponent},
   {path: 'adminhomecontent',component:AdminhomecontentComponent},
   {path: 'adminsidenavigation',component:AdminsidenavigationComponent},
-  {path: 'analysis',component:AnalysisComponent}
-  
+  {path: 'analysis',component:AnalysisComponent},
+  {path: 'displayusermedicine',component:DisplayusermedicineComponent},
+  {path: 'display-registerdetail',component:DisplayResigerdetailComponent},
+  {path: 'displaystockdetail',component:DisplaystockdetailComponent},
+  {path: 'card',component:CardsComponent}
   
 ];
 

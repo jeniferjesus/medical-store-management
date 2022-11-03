@@ -11,12 +11,13 @@
   left: 0;
   right: 0;
 }
+
 .cetgpagedesignbset {
     display: inline-block;
     width: 100%;
     border: 0;
     border-radius: 10px;
-    background: #fff;
+    /* background: #fff; */
     transition: .3s all !important;
     height: auto !important;
     padding-top: 0;

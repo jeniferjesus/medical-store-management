@@ -2,7 +2,7 @@
     <div class="container">
       <div class="title">APPLY FOR MEDICINE</div>
       <div class="content">
-        <form action="#" [formGroup]="form">
+        <form action="#" [formGroup]="form" (ngSubmit)="addusermedicinedetail()">
           <div class="user-details">
 
             <div class="input-box">
@@ -76,9 +76,10 @@
             </div> -->
 
             <div class="input-box">
-              <input type="number" formControlName="m6"  placeholder="Medicine Quantity" [(ngModel)]="quan" [(ngModel)]="quantity"  required>
+              <input type="text" formControlName="m6"  placeholder="Medicine Quantity" [(ngModel)]="quan" [(ngModel)]="quantity"  required>
               <div *ngIf="form.controls['m6'].touched && form.controls['m6'].invalid" class="alert alert-danger">
                   <div class="errorcls" *ngIf="form.controls['m6'].errors && form.controls['m6'].errors['required']">Required</div>
+                  <!-- <div class="errorcls" *ngIf="form.controls['m6'].errors && form.controls['m6'].errors['pattern']">Alphabets not accepted</div> -->
                 </div>
               
             </div>
@@ -110,11 +111,15 @@
                 
               </div>
             </div>  
-            
-         
-          <div class="button">
-            <input type="button" (click)="addusermedicinedetail()" value="Apply">
+            <div class="button">
+            <input  
+             type="submit" onsubmit="addusermedicinedetail()" value="Apply">
           </div>
+  
+          <!-- <div class="button">
+            (click)="addusermedicinedetail()"
+            <input type="button" value="Apply">  -->
+          <!-- </div> -->
           <p class="small fw-bold mt-2 pt-1 mb-0 login-creds">Back to Home Page? <a  [routerLink]="['/navbar']" 
             class="link-danger">Click Here</a></p>
         </form>

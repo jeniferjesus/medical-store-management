@@ -53,6 +53,14 @@ import { AdminsidenavigationComponent } from './component/adminsidenavigation/ad
 import { NewregComponent } from './component/newreg/newreg.component';
 import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
 import { AnalysisComponent } from './component/analysis/analysis.component';
+import { DisplayusermedicineComponent } from './component/displayusermedicine/displayusermedicine.component';
+// import { MatTableDataSource } from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import { DisplaystockdetailComponent } from './component/displaystockdetail/displaystockdetail.component';
+import { DisplayResigerdetailComponent } from './component/display-resigerdetail/display-resigerdetail.component';
+import { CardsComponent } from './component/cards/cards.component';
+import { Ng2SearchPipe, Ng2SearchPipeModule } from 'ng2-search-filter';
+// import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 @NgModule({
   declarations: [
     AppComponent,
@@ -79,7 +87,11 @@ import { AnalysisComponent } from './component/analysis/analysis.component';
     AdminhomecontentComponent,
     AdminsidenavigationComponent,
     NewregComponent,
-    AnalysisComponent
+    AnalysisComponent,
+    DisplayusermedicineComponent,
+    DisplaystockdetailComponent,
+    DisplayResigerdetailComponent,
+    CardsComponent
   ],
   imports: [
     BrowserModule,
@@ -89,6 +101,11 @@ import { AnalysisComponent } from './component/analysis/analysis.component';
     MatCardModule,
     ReactiveFormsModule,
     DropDownListModule,
+    Ng2SearchPipeModule,
+    // MatTableDataSource,
+    MatPaginatorModule,
+    // AngularFireDatabase,
+    // AngularFireList,
    // AngularFirestore,
     AngularFireModule.initializeApp(environment.firebase),
     provideFirebaseApp(() => initializeApp(environment.firebase)),

@@ -1,9 +1,10 @@
-<nav class="navbar navbar-expand-lg navbar-light p-3 " style="background-color: #e3f2fd;">
+
+<nav class="navbar navbar-expand-lg navbar-light p-1.5" style="background-color: #84fab0">
   <a class="navbar-brand d-flex flex-row" href="#">
-     <div class="logo-image mr-2">
+     <div class="logo-image mr-1">
     <img src="../../assets/medicare1.JPG" class="img-fluid">
 </div>
-<p class="logohead">Medicare</p>
+<p class="logohead">MediCure</p>
 </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -11,7 +12,7 @@
 
   <div class="collapse navbar-collapse " id="navbarSupportedContent">
 
-    <ul class="ml-auto navbar-nav font-weight-bold navfont">
+    <!-- <ul class="ml-auto navbar-nav font-weight-bold navfont">
       <li class="nav-item active">
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
       </li>
@@ -21,14 +22,24 @@
       <li class="nav-item active">
         <a class="nav-link" routerLink="/newreg">Apply For Medicines<span class="sr-only">(current)</span></a>
       </li>
-    </ul>
+    </ul> -->
 
 <ul class="ml-auto navbar-nav font-weight-bold navfont">
+
+  <!-- <ul class="ml-auto navbar-nav font-weight-bold navfont"> -->
+    <!-- <li class="nav-item active navfont" >
+      <a class="nav-link nav-contents">Home <span class="sr-only">(current)</span></a>
+    </li> -->
+    <li class="nav-item active">
+      <a class="nav-link nav-contents" routerLink="/commonmed">Categories<span class="sr-only">(current)</span></a>
+    </li>
+    <li class="nav-item active">
+      <a class="nav-link nav-contents" routerLink="/login">Apply For Medicines<span class="sr-only">(current)</span></a>
+    </li>
+  <!-- </ul> -->
+
       <li class="nav-item active">
-        <a class="nav-link" routerLink="/login">Sign In <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" routerLink="/loginregister">Sign Up <span class="sr-only">(current)</span></a>
+        <a class="nav-link nav-contents" routerLink="/login">Sign In <span class="sr-only">(current)</span></a>
       </li>
     </ul>
 
@@ -38,7 +49,9 @@
     </form> -->
   </div>
 </nav>
-<br><br>
+<br>
+<!--<br> <br> -->
+
 <app-carousel></app-carousel>
 <app-details></app-details>
 <app-footer></app-footer>

@@ -1,6 +1,6 @@
 .logo-image{
-    width: 70px;
-    height: 70px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     overflow: hidden;
     margin-top: -6px;
@@ -12,6 +12,7 @@
     font-size:large;
     color:black;
   }
+
   .logohead
   {
     font-family: Arial, Helvetica, sans-serif;
@@ -19,6 +20,15 @@
     font-weight:bold;
     margin:auto;
   }
+
+  .category-nav {
+    padding-left:60%;
+  }
+
+  .home-contents:hover{
+    background-color: white;
+  }
+
   nav
   {
     position:relative;

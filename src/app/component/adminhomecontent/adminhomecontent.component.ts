@@ -6,10 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./adminhomecontent.component.css']
 })
 export class AdminhomecontentComponent implements OnInit {
-
+searchtext:any;
   constructor() { }
 
   ngOnInit(): void {
   }
-
+public status=true;
 }

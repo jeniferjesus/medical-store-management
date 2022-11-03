@@ -58,6 +58,7 @@
     background: #081D45;
   }
   .sidebar .nav-links li a:hover{
+    cursor: pointer;
     background: #081D45;
   }
   .sidebar .nav-links li i{

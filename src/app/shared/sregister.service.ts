@@ -30,7 +30,13 @@ export class SregisterService {
     return this.afs.collection('/Registerdata').snapshotChanges();
   }
  
- 
+  deleteuserregister(dregister : Mregister) {
+    this.afs.doc('/Registerdata/'+dregister.id).delete();
+ }
+ updateuserregister(dregister : Mregister){
+  this.afs.doc('/Registerdata' + dregister.id).update(dregister);
+}
+
 
   // login(email: string, password: string){
   //   return from(signInWithEmailAndPassword(this.addregisterdata, email, password));

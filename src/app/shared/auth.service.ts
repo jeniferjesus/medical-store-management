@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
-import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, UserCredential } from '@angular/fire/auth';
+import { Auth, createUserWithEmailAndPassword, fetchSignInMethodsForEmail, signInWithEmailAndPassword, UserCredential } from '@angular/fire/auth';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 //import {AngularFirestore} from '@angular/fire/compat/firebase.app';
 import { AngularFireStorage } from '@angular/fire/compat/storage';
 import { Router } from '@angular/router';
+import * as firebase from 'firebase/compat';
 import { from, Observable } from 'rxjs';
 import { Mregister } from '../model/mregister';
 @Injectable({
@@ -36,10 +37,24 @@ export class AuthService {
   // }
   signUp(email: string, password: string): Observable<UserCredential> {
     return from(createUserWithEmailAndPassword(this.auth, email, password)).pipe();
+    // return from(fetchSignInMethodsForEmail(email)).pipe();
   }
 
   login(email: string, password: string): Observable<any> {
     return from(signInWithEmailAndPassword(this.auth, email, password));
-  }
-  
+   }
+   
+
+
+  // getemail(email: string, password: string) {
+  //   signInWithEmailAndPassword(this.auth,email,password).first().subscribe(x => {
+  //     if (x.$exists()){
+  //           console.log(`FOUND`,x);
+  //     }else {
+  //           console.log(`NOT FOUND`);
+  //     }
+  // });
+  // }
+ // }
+
 }

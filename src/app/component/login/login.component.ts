@@ -4,7 +4,7 @@ import { HotToastService } from '@ngneat/hot-toast';
 //import { AuthService } from 'src/app/shared/auth.service';
 import { AuthService } from 'src/app/shared/auth.service';
 import { Mregister } from 'src/app/model/mregister';
-import { doc } from "firebase/firestore";
+// import { doc } from "firebase/firestore";
 
 
 // try
@@ -92,9 +92,11 @@ export class LoginComponent implements OnInit {
   
  
   login(){
-    if(this.auth.login('admin@gmail.com','12345678')){
-      this.router.navigate(['/category']);
+    // debugger
+    if(this.email=="admin@gmail.com" && this.password=="12345678"){
+      this.router.navigate(['/analysis']);
     }
+  
     else{
     this.auth.login(this.email,this.password)
    .pipe(
