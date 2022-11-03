@@ -1,0 +1,68 @@
+<div class="container">
+    <form [formGroup]="stockform">
+
+        <div class="row">
+
+            <div class="col">
+                
+                <h3 class="title">ADD STOCK DETAILS</h3>
+
+                <div class="inputBox">
+                    <h3><span>STOCK_ID :</span></h3>
+                    <input formControlName="stock_id"  type="text">
+                    <div *ngIf="stockform.controls['stock_id'].touched && stockform.controls['stock_id'].invalid" class="alert alert-danger">
+                        <div class="errorcls" *ngIf="stockform.controls['stock_id'].errors && stockform.controls['stock_id'].errors['required']">ID is required.</div>
+                        <div class="errorcls" *ngIf="stockform.controls['stock_id'].errors && stockform.controls['stock_id'].errors['pattern']">ID should not contain alphabets</div>
+                        <div class="errorcls" *ngIf="stockform.controls['stock_id'].errors && stockform.controls['stock_id'].errors['minlength']">Minimum Length is 4</div>
+                         <div class="errorcls" *ngIf="stockform.controls['stock_id'].errors && stockform.controls['stock_id'].errors['maxlength']">Maximum Length Is 6</div> 
+                    </div>
+                </div>
+
+                <div class="inputBox">
+                   <h3> <span>STOCK_NAME :</span></h3>
+                    <input formControlName="name" type="text" >
+                  
+<div *ngIf="stockform.controls['name'].touched && stockform.controls['name'].invalid" class="alert alert-danger">
+ <div class="errorcls" *ngIf="stockform.controls['name'].errors && stockform.controls['name'].errors['required']">Name is required.</div>
+<div class="errorcls" *ngIf="stockform.controls['name'].errors && stockform.controls['name'].errors['minlength']">Name should be Minimum 5 character.</div>
+ <div class="errorcls" *ngIf="stockform.controls['name'].errors && stockform.controls['name'].errors['pattern']">Name should not contain numbers</div>
+</div>
+
+
+                </div>
+                
+                <div class="inputBox">
+                  <h3><span>QUANTITY :</span></h3>
+                    
+                    <input formControlName="quantity"  type="text">
+                    <div *ngIf="stockform.controls['quantity'].touched && stockform.controls['quantity'].invalid" class="alert alert-danger">
+                        <div class="errorcls" *ngIf="stockform.controls['quantity'].errors && stockform.controls['quantity'].errors['required']">Quantity is required.</div>
+                        <div class="errorcls" *ngIf="stockform.controls['quantity'].errors && stockform.controls['quantity'].errors['pattern']">ID should not contain alphabets</div>
+                        <div class="errorcls" *ngIf="stockform.controls['quantity'].errors && stockform.controls['quantity'].errors['minlength']">Minimum Length is 4</div>
+                         <div class="errorcls" *ngIf="stockform.controls['quantity'].errors && stockform.controls['quantity'].errors['maxlength']">Maximum Length Is 9</div> 
+                    </div>
+                </div>
+
+                <div class="flex">
+                    <div class="inputBox">
+                        <h3><span>MFG_DATE :</span></h3>
+                        <input type="date" >
+                    </div>
+                    <div class="inputBox">
+                       <h3> <span>EXP_DATE :</span></h3>
+                        <input type="date" >
+                    </div>
+                </div>
+                
+
+            </div>
+
+            
+    
+        </div>
+        
+         <input type="submit" value="ADD STOCK" class="submit-btn" onsubmit="submit()" [disabled]="this.loading"> 
+        
+    </form>
+
+</div>    

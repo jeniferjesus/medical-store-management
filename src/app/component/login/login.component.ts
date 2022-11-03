@@ -18,7 +18,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { AngularFireStorage } from '@angular/fire/compat/storage';
-import { map, Observable, switchMap } from 'rxjs';
+import { map, Observable, pipe, switchMap } from 'rxjs';
 import { getDoc } from '@angular/fire/firestore';
 //import { AuthService } from 'src/app/shared/auth.service';
 
@@ -76,6 +76,11 @@ export class LoginComponent implements OnInit {
 
 
   ngOnInit(): void {
+    // this.auth.login(this.email,this.password);
+    
+    // this.email = '';
+    // this.password = '';
+
   
   }
   loginForm = this.fb.group(
@@ -85,32 +90,26 @@ export class LoginComponent implements OnInit {
     }
   );
   
-  getAllStudents() {
-
-   this.data.getAllStudents().subscribe((res: any[]) => {
-      this.registerdata = res.map((e: any) => {
-        const data = e.payload.doc.data();
-        data.id = e.payload.doc.id;
-        return data;
-      })
-
-    }, 
-    Error,(err: any)=>`${err?.message}`)
-
-  }
-  getAllStudents1() {
-
-    this.data.getAllStudents().subscribe((res: any[]) => {
-       this.registerdata = res.map((e: any) => {
-         const data = e.payload.doc.data();
-         data.id = e.payload.doc.id;
-         return data;
-       })
  
-     }, 
-     Error,(err: any)=>`${err?.message}`)
- 
-   }
+  login(){
+    if(this.auth.login('admin@gmail.com','12345678')){
+      this.router.navigate(['/category']);
+    }
+    else{
+    this.auth.login(this.email,this.password)
+   .pipe(
+    this.toast.observe({      
+    success: 'Congrats! You are successfully loggedin',
+    loading: 'Logging...',
+   // error:  'wrong'    
+   error:(err: any)=>`${err?.message}`,
+  })  
+  )
+  .subscribe(() => {   
+   this.router.navigate(['/newreg']);
+  });
+}
+}  
    onSubmit() {  
     this.router.navigateByUrl('/loginregister');
 } 

@@ -1,0 +1,50 @@
+/* :host { */
+    .mat-icon:host {
+      vertical-align: middle;
+      margin-right: 1rem;
+    }
+  /* } */
+  .logo {
+    text-align: center;
+    padding: 2.6rem 1rem;
+    /* img {
+      width: 200px;
+    } */
+  }
+  .mat-divider {
+    border-top-width: 2px;
+    border-color: white;
+  }
+  .mat-list-item:hover{
+    color:  #153462!important;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    height: 44px !important;
+    margin-bottom: 4px;
+    /* &:hover { */
+      color: #c3ccd1 !important;
+    }
+    /* } */
+    /* :ng-deep::hover { */
+       .mat-list-item-content:ng-deep:hover{
+        border-radius: 5px;
+        margin: 0 8px;
+       
+          background: #153462!important;
+       } 
+      
+    
+  /* } */
+  .list-item-active {
+ 
+  
+    color: #153462!important;
+   
+  }
+  .mat-subheader {
+    color: black;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+   
+    letter-spacing: 1px;
+  }

@@ -35,7 +35,7 @@ export class AuthService {
   //   return from(signInWithEmailAndPassword(this.auth, email, password));
   // }
   signUp(email: string, password: string): Observable<UserCredential> {
-    return from(createUserWithEmailAndPassword(this.auth, email, password));
+    return from(createUserWithEmailAndPassword(this.auth, email, password)).pipe();
   }
 
   login(email: string, password: string): Observable<any> {

@@ -45,7 +45,7 @@ export class LoginregisterComponent implements OnInit {
     private data: SregisterService, 
      private fb: NonNullableFormBuilder,
      private router: Router,
-     private toast: HotToastService,) { }
+     private toast: HotToastService) { }
   getAlluserregisterdata() {
 
     this.data.getAlluserregisterdata().subscribe(res => {
@@ -67,6 +67,7 @@ export class LoginregisterComponent implements OnInit {
     if (!this.form.valid || !name || !phnm || !email || !password || !cpassword) {
       return;
     }
+   
     this.registerObj.id = '';
     this.registerObj.username = this.username;
     this.registerObj.phonenumber = this.phonenumber;
@@ -75,21 +76,22 @@ export class LoginregisterComponent implements OnInit {
     this.registerObj.confirmpassword = this.confirmpassword;
 
     console.log(this.form.value);
+   
     this.data
     .addregisterdata(this.registerObj)
     .pipe(
-    this.toast.observe({
-      success: 'Congrats! You are all signed up',
+    this.toast.observe({      
+      success: 'Congrats! '+this.registerObj.username + ' You are all signed up',
       loading: 'Signing up...',
-     // error:  'wrong'
+     // error:  'wrong'    
      error:(err: any)=>`${err?.message}`,
     })  
     )
     .subscribe(() => {
-      this.router.navigate(['/login']);
+      this.auth
+      .signUp(email, password)
+     this.router.navigate(['/login']);
     });
-   
-
 }
     
   }

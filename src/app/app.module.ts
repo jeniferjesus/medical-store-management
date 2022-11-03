@@ -23,23 +23,63 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { MatCardModule } from '@angular/material/card';
 import { LoginregisterComponent } from './component/loginregister/loginregister.component';
-import { HomepagedesignComponent } from './component/homepagedesign/homepagedesign.component';
-import{NavbarComponent} from './component/homepagedesign/navbar/navbar.component';
-import{CarouselComponent} from './component/homepagedesign/carousel/carousel.component';
-import{DetailsComponent} from './component/homepagedesign/details/details.component';
-import{FooterComponent} from './component/homepagedesign/footer/footer.component';
+import{NavbarComponent} from './component/navbar/navbar.component';
+import{CarouselComponent} from './component/carousel/carousel.component';
+import{DetailsComponent} from './component/details/details.component';
+import{FooterComponent} from './component/footer/footer.component';
+import{AcidpageComponent} from './component/acidpage/acidpage.component'
+import { BpComponent } from './component/bp/bp.component';
+import { CommonmedComponent } from './component/commonmed/commonmed.component';
+import { CategoryComponent } from './component/category/category.component';
+import { DiabetespageComponent } from './component/diabetespage/diabetespage.component';
+import { FeverComponent } from './component/fever/fever.component';
+import { NavcategoryComponent } from './component/navcategory/navcategory.component';
+import { StockComponent } from './component/stock/stock.component';
+import { ThroatComponent } from './component/throat/throat.component';
+import { VitaminComponent } from './component/vitamin/vitamin.component';
+// import { FeverComponent } from './component/navbarmed/fever/fever.component';
+import{NavbarmedComponent} from './component/navbarmed/navbarmed.component';
+import { SidenavComponent } from './component/sidenav/sidenav.component';
 //import{NavbarComponent} from './component/homepagedesign/navbar/navbar.component';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
+ import { MatMenuModule } from '@angular/material/menu';
+ import { MatIconModule } from '@angular/material/icon';
+ import { MatDividerModule } from '@angular/material/divider';
+ import { MatListModule } from '@angular/material/list';
+import { DashboarddesignComponent } from './component/dashboarddesign/dashboarddesign.component';
+import { AdminhomecontentComponent } from './component/adminhomecontent/adminhomecontent.component';
+import { AdminsidenavigationComponent } from './component/adminsidenavigation/adminsidenavigation.component';
+import { NewregComponent } from './component/newreg/newreg.component';
+import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { AnalysisComponent } from './component/analysis/analysis.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
     LoginregisterComponent,
-    HomepagedesignComponent,
     NavbarComponent,
     CarouselComponent,
     DetailsComponent,
-    FooterComponent
+    FooterComponent,
+    AcidpageComponent,
+    BpComponent,
+    CommonmedComponent,
+    CategoryComponent,
+    DiabetespageComponent,
+    FeverComponent,
+    NavcategoryComponent,
+    StockComponent,
+    ThroatComponent,
+    VitaminComponent,
+    NavbarmedComponent,
+    SidenavComponent,
+    DashboarddesignComponent,
+    AdminhomecontentComponent,
+    AdminsidenavigationComponent,
+    NewregComponent,
+    AnalysisComponent
   ],
   imports: [
     BrowserModule,
@@ -48,6 +88,7 @@ import{FooterComponent} from './component/homepagedesign/footer/footer.component
     FormsModule,
     MatCardModule,
     ReactiveFormsModule,
+    DropDownListModule,
    // AngularFirestore,
     AngularFireModule.initializeApp(environment.firebase),
     provideFirebaseApp(() => initializeApp(environment.firebase)),
@@ -61,7 +102,13 @@ import{FooterComponent} from './component/homepagedesign/footer/footer.component
     provideRemoteConfig(() => getRemoteConfig()),
     provideStorage(() => getStorage()),
     HotToastModule.forRoot(),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatSidenavModule,
+    MatToolbarModule,
+     MatMenuModule,
+     MatIconModule,
+     MatDividerModule,
+     MatListModule 
   ],
   providers: [
     ScreenTrackingService,UserTrackingService
