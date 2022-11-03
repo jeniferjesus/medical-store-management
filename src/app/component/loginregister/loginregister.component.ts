@@ -95,56 +95,76 @@ export class LoginregisterComponent implements OnInit {
 
   }
   
-  submit(){
-    const { name, phnm,email, password,cpassword } = this.form.value;
-    if (!this.form.valid || !name || !phnm || !email || !password || !cpassword) {
-      return;
-    }
+  // submit(){
+  //   const { name, phnm,email, password,cpassword } = this.form.value;
+  //   if (!this.form.valid || !name || !phnm || !email || !password || !cpassword) {
+  //     return;
+  //   }
    
-    this.registerObj.id = '';
+  //   this.registerObj.id = '';
+  //   this.registerObj.username = this.username;
+  //   this.registerObj.phonenumber = this.phonenumber;
+  //   this.registerObj.email = this.email;
+  //   this.registerObj.password = this.password;
+  //   this.registerObj.confirmpassword = this.confirmpassword;
+  //   console.log(this.form.value);
+  //   let search = this.registerObj.email;
+  //   this.auth
+  //     .signUp(this.username,email, password)
+  //     .pipe(    
+  //       this.toast.observe({
+  //         success: 'Congrats! You are all signed up',
+  //         loading: 'Signing up...',
+  //        // error:  'wrong'
+  //        error:(err: any)=>`${err?.message}`
+        
+  //       })
+  //     )
+  //   this.data
+  //   .addregisterdata(this.registerObj)
+  //   .pipe(
+  //   this.toast.observe({      
+  //     success: 'Congrats! '+this.registerObj.username + ' You are all signed up',
+  //     loading: 'Signing up...',
+  //    // error:  'wrong'    
+  //    error:(err: any)=>`${err?.message}`,
+  //   })  
+  //   )
+  //   .subscribe(() => {
+  //     this.router.navigate(['/login']);
+  //   });
+  // }
+  submit() {
+    const { name, email, password } = this.form.value;
+   this.registerObj.id = '';
     this.registerObj.username = this.username;
     this.registerObj.phonenumber = this.phonenumber;
     this.registerObj.email = this.email;
     this.registerObj.password = this.password;
     this.registerObj.confirmpassword = this.confirmpassword;
-    console.log(this.form.value);
-    let search = this.registerObj.email;
-  //   if (task.isSuccessful()) {
-  //     /////user do not exit so good to initialize firebase user.              
-  // firebaseUser = task.getResult().getUser();
-  // } else {
-  //     if(task.getException().getMessage().equals("The email address is already in use by another account.")) {
-  //       Log.d(TAG, "This email ID already used by someone else");     
-  //     }
-  // }
-
-  //  if(search!=null)
-  // {
-  //   debugger
-  //   this.auth
-  //   .checkEmailExist()
-  //   alert("already exits");
-  //  }
-  //  else{
-    
-    this.data
-    .addregisterdata(this.registerObj)
-    .pipe(
-    this.toast.observe({      
-      success: 'Congrats! '+this.registerObj.username + ' You are all signed up',
-      loading: 'Signing up...',
-     // error:  'wrong'    
-     error:(err: any)=>`${err?.message}`,
-    })  
+    if (!this.form.valid || !name || !password || !email) {
+      return;
+    }
+    this.auth
+    .signUp(name,email, password)
+    .pipe(    
+      this.toast.observe({
+        success: 'Congrats! '+ this.registerObj.username + ' You are all signed up',
+        loading: 'Signing up...',
+       // error:  'wrong'
+       error:(err: any)=>`${err?.message}`      
+      })      
     )
     .subscribe(() => {
-      this.auth
-      .signUp(email, password)
-     this.router.navigate(['/login']);
+      // this.router.navigate(['/login']);
+      this.data
+      .addregisterdata(this.registerObj)
+      this.router.navigate(['/login']);
     });
   }
+  
 }
     
-//}
+
 
 
